@@ -1,10 +1,10 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,
-blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
-em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,
-u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
-caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
-embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,
-section,summary,time,mark,audio,video
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,
+p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,
+dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,
+var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,
+details,embed,figure,figcaption,footer,header,hgroup,menu,nav,
+output,ruby,section,summary,time,mark,audio,video
 {
     border:0;
     font-size:100%;
@@ -13,10 +13,11 @@ section,summary,time,mark,audio,video
     margin:0;
     padding:0
 }
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section
+article,aside,details,figcaption,figure,footer,header,
+hgroup,menu,nav,section
 {
     display:block
+
 }
 body
 {
@@ -28,17 +29,36 @@ ol,ul
 }
 blockquote,q
 {
-    quotes:none
+    quotes:none}
+    blockquote:before,blockquote:after,q:before,q:after
+    {
+        content:none
+    }
+    table
+    {
+        border-collapse:collapse;
+        border-spacing:0
+    }
+
+.card__container_zabroshka {
+    background-image: url();
 }
-blockquote:before,blockquote:after,
-q:before,q:after
-{
-    content:none
+
+.card__container_religion {
+    background-image: url();
+    
 }
-table
-{
-    border-collapse:collapse;
-    border-spacing:0
+
+.card__container_science-center {
+    background-image: url();
+}
+
+.card__container_dunja-edu {
+    background-image: url();
+}
+
+.card__container_nikita-zuker {
+    background-image: url();
 }
 
 .root {
@@ -72,27 +92,7 @@ a:focus {
 .kruzhok-link:hover {
     text-decoration: underline;
 }
-.card__title_cheburek {background-image: url(../images/cheburek.jpg);}
-.card__container_zabroshka {
-    background-image: url(../images/zabroshka.jpg);
-}
 
-.card__container_religion {
-    background-image: url(../images/religion.png);
-    
-}
-
-.card__container_science-center {
-    background-image: url(../images/science-center.jpg);
-}
-
-.card__container_dunja-edu {
-    background-image: url(../images/dunja_edu.png);
-}
-
-.card__container_nikita-zuker {
-    background-image: url(../images/nikita_zuker.png);
-}
 .header__logo-container {
     min-height: 74px;
     display: flex;
@@ -242,7 +242,7 @@ a:focus {
     display: block;
     width: 100%;
     padding-bottom: 100%;
-    background-image: url(../images/play_btn.svg);
+    /*background-image: url(кнопкатреугольник.png);*/
     background-size: cover;
     background-position: center;
     transition: transform linear .2s;
@@ -344,6 +344,57 @@ a:focus {
     margin: auto;
     font-size: 14px;
     line-height: 1.2;
+} 
+
+@font-face {
+    font-family: 'Tenor Sans';
+    src: local('Tenor Sans'), local('TenorSans'), url('tenorsans.woff2') format('woff2'), url('tenorsans.woff') format('woff'), url('tenorsans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        z-index: 0;
+    }
+} 
+
+@keyframes pulse {
+    from {opacity: 1;}
+    to {opacity: .7;}
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0;
+        border-color: transparent;
+        transform: scale(0.5) rotate(0);
+    }
+    40% {
+        opacity: 1;
+        border-color: #fff;
+    }
+    80% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
 }
 
 @media screen and (max-width: 1264px) {
@@ -472,34 +523,4 @@ a:focus {
         bottom: 20px;
     }
 }
-.root {
-    font-family: 'Cormorant Garamond';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    background-color: #3E4B3B;
-    min-height: 100vh;
-    position: relative;
-}
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Tenor Sans';
-}
-
-/*body {*/
-    /*background-color: #3E4B3B;*/
-/*}*/
-
-a:focus {
-    outline: none;
-}
-
-.kruzhok-link {
-    color: #fff;
-    text-decoration: none;
-}
-
-.kruzhok-link:hover {
-    text-decoration: underline;
-}
